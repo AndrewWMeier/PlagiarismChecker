@@ -15,6 +15,9 @@
 			body {
 				font-family: "DM Sans", sans-serif;
 			}
+			.container {
+				padding-inline: 1rem;
+			}
 		</style>
 	</head>
 	<body class="bg-gray-100">
@@ -84,9 +87,14 @@
 					<h2>Source URL</h2>
 				</div>
 				<div class="col-span-3">
-					<a href="{{cp['soruce_url']}}" class="text-blue-500 underline"
-						>{{ cp['source_url'] }}</a
+					<a
+						href="{{ cp['source_url'] }}"
+						class="text-blue-500 underline"
+						target="_blank"
+						ref="noopener noreferrer"
 					>
+						{{ cp['source_url'] }}
+					</a>
 				</div>
 			</div>
 			{% endif %} {% endfor %}
