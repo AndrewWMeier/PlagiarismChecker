@@ -6,10 +6,25 @@ A plagiarism checker for a final project
 
 1. Clone this repository and make a virtual environment.
 
-    ```bash
-    python3 -m venv .venv
-    source ./.venv/bin/activate
-    ```
+    - Windows
+
+        ```powershell
+        python -m venv .venv
+        ```
+
+        ```powershell
+        .\.venv\Scripts\activate
+        ```
+
+    - Linux
+
+        ```bash
+        python3 -m venv .venv
+        ```
+
+        ```bash
+        source ./.venv/bin/activate
+        ```
 
 2. Install the required packages.
 
