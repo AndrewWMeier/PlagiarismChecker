@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Plagiarism Checker</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			body {
+				font-family: "DM Sans", sans-serif;
+			}
+		</style>
+	</head>
+	<body class="bg-gray-100">
+		<!-- Nav bar starts -->
+		<nav class="h-16 flex items-center border-b shadow bg-white">
+			<div class="container max-w-prose mx-auto flex items-center">
+				<div class="text-xl text-blue-500">Plagiarism Checker</div>
+				<ul class="flex flex-1 justify-end">
+					<li>
+						<a
+							href="https://github.com/AndrewWMeier/PlagiarismChecker"
+							class="underline underline-offset-2 hover:underline-offset-4 hover:text-blue-600 transition-all"
+						>
+							Github
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- Nav bar ends -->
+
+		<!-- Main content starts -->
+		<div class="container max-w-prose mx-auto my-10">
+			<form action="/check" method="post" id="form">
+				<label for="text" class="block text-xl">
+					Enter text to check for plagiarism
+				</label>
+				<textarea
+					name="text"
+					id="text"
+					rows="10"
+					class="w-full p-2 mt-4 border-2 border-gray-300 rounded-md"
+					placeholder="Enter text here..."
+				></textarea>
+				<div class="my-4">
+					<p>These conditions need to be met</p>
+					<ul class="text-md list-disc mx-4 mt-2">
+						<li id="condition-1" class="text-gray-600">
+							Text must be at least 10 words
+						</li>
+					</ul>
+				</div>
+				<button
+					type="submit"
+					name="submit"
+					class="w-full text-center py-2 mt-4 font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600"
+				>
+					Check
+				</button>
+			</form>
+		</div>
+		<!-- Main content ends -->
+
+		<!-- Footer starts -->
+		<footer class="max-w-prose container mx-auto text-center my-10">
+			<p class="text-gray-500 text-md">
+				Authored by Andrew W. Meier and Gauravjot Garaya
+			</p>
+		</footer>
+		<!-- Footer ends -->
+
+		<script type="text/javascript">
+			const textArea = document.getElementById("text");
+			const condition1 = document.getElementById("condition-1");
+
+			textArea.addEventListener("input", () => {
+				const text = textArea.value;
+				const words = text.split(" ");
+				if (words.length >= 10) {
+					condition1.classList.add("line-through");
+				} else {
+					condition1.classList.remove("line-through");
+				}
+			});
+
+			const form = document.getElementById("form");
+			form.addEventListener("submit", (e) => {
+				const text = textArea.value;
+				const words = text.split(" ");
+				if (words.length < 10) {
+					e.preventDefault();
+					alert("Text must be at least 10 words");
+				}
+			});
+		</script>
+	</body>
+</html>
