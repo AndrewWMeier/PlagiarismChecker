@@ -54,7 +54,7 @@ The algorithm for creating scores and checking for plagarism is as follows:
     - For each sentence in the source object:
         - For each sentence in the user-inputted text:
             - Compare the two sentences using the compare function.
-            - If the score is greater than or eqaul to 0.5, we consider it worthwhile for the user to look at.
+            - If the score is greater than 0.5, we consider it worthwhile for the user to look at.
 
 7. Scores are calculated by turning each sentence into a set of words. We then take a jaccard similarity of the two sets.
 
