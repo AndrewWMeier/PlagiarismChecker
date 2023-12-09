@@ -50,10 +50,11 @@ The algorithm for creating scores and checking for plagarism is as follows:
 
 5. Now with the user inputed sentences and the source sentences, we can compare them using our algorithm. Every sentence the user input is compared to every sentence in the results from the web scraping.
 6. For each source object:
- <p style="margin-left: 10px;">For each sentence in the source object:
-     <p style="margin-left: 20px;">For each sentence in the user-inputted text:
-         <p style="margin-left: 30px;">Compare the two sentences using the compare function.
-         <p style="margin-left: 30px;">If the score is greater than 0.5, we consider it worthwhile for the user to look at.
+
+    - For each sentence in the source object:
+        - For each sentence in the user-inputted text:
+            - Compare the two sentences using the compare function.
+            - If the score is greater than or eqaul to 0.5, we consider it worthwhile for the user to look at.
 
 7. Scores are calculated by turning each sentence into a set of words. We then take a jaccard similarity of the two sets.
 
