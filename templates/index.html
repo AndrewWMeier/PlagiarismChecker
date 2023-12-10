@@ -63,7 +63,7 @@
 				<button
 					type="submit"
 					name="submit"
-					class="w-full text-center py-2 mt-4 font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600"
+					class="w-full text-center py-2 mt-4 font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 disabled:pointer-events-none disabled:opacity-50"
 				>
 					Check
 				</button>
@@ -100,6 +100,11 @@
 				if (words.length < 10) {
 					e.preventDefault();
 					alert("Text must be at least 10 words");
+				} else {
+					// disable button to prevent multiple submissions
+					const button = document.querySelector('button[type="submit"]');
+					button.disabled = true;
+					button.innerHTML = "Checking...";
 				}
 			});
 		</script>

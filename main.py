@@ -43,8 +43,8 @@ def get_google_results(query, num_results=3):
                 # clean up the content and create a source object
                 cleaned_content = data_cleanup(content)
                 source = Source(cleaned_content, result)
-                all_sources.append(source)
                 source.set_url(result)
+                all_sources.append(source)
         return all_sources
 
     except Exception as e:

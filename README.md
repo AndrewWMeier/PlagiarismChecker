@@ -56,8 +56,8 @@ The algorithm for creating scores and checking for plagarism is as follows:
 
 ### Preprocessing
 
-1. Using beatiful soup and google search get the top 3 results for the user inputed text.
-2. Using the top 3 results, get the paragraph text from each of the results. While getting the paragraph text, we tokenize it into sentences using nltk in the data_cleanup function.
+1. Using beatiful soup and google search get the top 5 results for the user inputed text.
+2. Using the top 5 results, get the paragraph text from each of the results. While getting the paragraph text, we tokenize it into sentences using nltk in the data_cleanup function.
 3. Store the sentences in a source object. Each source object has a URL property and a sentences property. These source objects are kept in an array.
 4. Turn the user inputed text into sentences using nltk in the data_cleanup function.
 

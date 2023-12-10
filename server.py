@@ -13,7 +13,7 @@ def index():
 def check():
     # get text from form
     text = request.form['text']
-    google_results = get_google_results(text)
+    google_results = get_google_results(text, num_results=5)
     # clean up the text
     cleaned_text = data_cleanup(text)
     # compare the sentences
